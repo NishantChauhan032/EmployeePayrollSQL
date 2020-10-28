@@ -34,4 +34,24 @@ alter table employee_payroll ADD Gender char(1) after name;
 update employee_payroll set Gender = 'F' where name = 'Terisa';
 update employee_payroll set Gender = 'M' where name = 'Bill' or name = 'Charlie';
 
+#UC 7- Ability to find sum, average, min, max and number of male and female employees
+select gender,SUM(salary) from employee_payroll where gender = 'F' group by gender;       #To show sum of salary for female employees
+select gender,SUM(salary) from employee_payroll where gender = 'M' group by gender;       #To show sum of salary for male employees
+select gender,SUM(salary) from employee_payroll  group by gender;                         #To show sum of salary for both male and female employees
+
+select gender,AVG(salary) from employee_payroll where gender = 'F' group by gender;       #To show average salary for female employees
+select gender,AVG(salary) from employee_payroll where gender = 'M' group by gender;       #To show average salary for male employees
+select gender,AVG(salary) from employee_payroll group by gender;                          #To show average salary forboth male and female employees
+
+select gender,MIN(salary) from employee_payroll where gender = 'F' group by gender;       #To show minimum salary for female employees
+select gender,MIN(salary) from employee_payroll where gender = 'M' group by gender;       #To show minimum salary for male employees
+select gender,MIN(salary) from employee_payroll group by gender;                          #To show minimum salary for both male and female employees
+
+select gender,MAX(salary) from employee_payroll where gender = 'M' group by gender;       #To show maximum salary for female employees
+select gender,MAX(salary) from employee_payroll where gender = 'M' group by gender;       #To show maximum salary for male employees
+select gender,MAX(salary) from employee_payroll group by gender;                          #To show maximum salary for both male and female employees
+ 
+select gender,COUNT(*) from employee_payroll group by gender;                             #To count number of male and female employees
+
+
 
