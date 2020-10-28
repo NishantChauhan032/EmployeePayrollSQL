@@ -15,4 +15,10 @@ primary key (ID)                                                  #Set ID as pri
 );        
 describe employee_payroll;                                        #To describe table
 
+# UC 3- To insert data into the table
+Insert into employee_payroll(name , salary , start) values
+( 'Bill',1000000.00,'2018-01-03' ),
+( 'Terisa',2000000.00,'2019-11-13'),
+( 'Charlie',3000000.00,'2020-05-21');
+
 
