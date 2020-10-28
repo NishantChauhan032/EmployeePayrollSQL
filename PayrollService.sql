@@ -24,4 +24,9 @@ Insert into employee_payroll(name , salary , start) values
 # UC 4- To retrieve all employee payroll data
 select * from employee_payroll;
 
+# UC 5- To retrieve salaray from payroll data
+select salary from employee_payroll where name ='Bill';                   #salary of any particular employee
+select * from employee_payroll                                            #salary of employees joined after a particular date
+	where start between cast('2018-01-01' as date) and date(now()); 
+
 
