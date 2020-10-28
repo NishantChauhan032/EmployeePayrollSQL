@@ -21,4 +21,7 @@ Insert into employee_payroll(name , salary , start) values
 ( 'Terisa',2000000.00,'2019-11-13'),
 ( 'Charlie',3000000.00,'2020-05-21');
 
+# UC 4- To retrieve all employee payroll data
+select * from employee_payroll;
+
 
