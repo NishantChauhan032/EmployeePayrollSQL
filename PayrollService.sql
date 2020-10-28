@@ -28,5 +28,10 @@ select * from employee_payroll;
 select salary from employee_payroll where name ='Bill';                   #salary of any particular employee
 select * from employee_payroll                                            #salary of employees joined after a particular date
 	where start between cast('2018-01-01' as date) and date(now()); 
+    
+# UC 6- Table altered to add gender 
+alter table employee_payroll ADD Gender char(1) after name;
+update employee_payroll set Gender = 'F' where name = 'Terisa';
+update employee_payroll set Gender = 'M' where name = 'Bill' or name = 'Charlie';
 
 
