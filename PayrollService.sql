@@ -69,7 +69,12 @@ Alter table employee_payroll Add Income_Tax Double NOT NULL After Taxable_Pay;
 Alter table employee_payroll Add Net_Pay Double NOT NULL After Income_Tax;
 Describe employee_payroll;
 
-
+# UC 10- To make Terisa as a part of Sales and Marketing Department
+Update employee_payroll SET department = 'sales'  WHERE name = 'Terisa';
+Update employee_payroll SET basic_pay = '3000000.00'  WHERE name = 'Terisa';
+Insert into employee_payroll(Name ,PhoneNumber,Address,Department,Gender,Basic_Pay,Deductions,Taxable_Pay,Income_Tax,Net_Pay,Start) values
+( 'Terisa','9878765469','Srinagar','marketing','F',3000000.00,1000000.00,2000000.00,500000.00,1500000.00,'2020-05-21' );
+select * from employee_payroll;
 
 
 
