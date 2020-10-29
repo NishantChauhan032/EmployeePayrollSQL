@@ -61,6 +61,17 @@ Alter table employee_payroll Alter Address SET Default 'TBD';                   
 describe employee_payroll;
 select * from employee_payroll;
 
+# UC 9- To extend table to have Basic pay,deductions,Taxable Pay,Income Tax,Net Pay
+Alter table employee_payroll Rename Column Salary To Basic_Pay;
+Alter table employee_payroll Add Deductions Double NOT NULL After Basic_Pay;
+Alter table employee_payroll Add Taxable_Pay Double NOT NULL After Deductions;
+Alter table employee_payroll Add Income_Tax Double NOT NULL After Taxable_Pay;
+Alter table employee_payroll Add Net_Pay Double NOT NULL After Income_Tax;
+Describe employee_payroll;
+
+
+
+
 
 
 
