@@ -53,5 +53,14 @@ select gender,MAX(salary) from employee_payroll group by gender;                
  
 select gender,COUNT(*) from employee_payroll group by gender;                             #To count number of male and female employees
 
+# UC 8- To store employee information like employee phone, address and department 
+Alter table employee_payroll Add PhoneNumber Varchar(250) After Name;                     #To add phone number column after name column
+Alter table employee_payroll Add Address Varchar(250) After PhoneNumber;                  #To add Address column after PhoneNumber column
+Alter table employee_payroll Add Department Varchar(150) NOT NULL After Address;          #To add department column after Address Column
+Alter table employee_payroll Alter Address SET Default 'TBD';                             #To set a default value to the address
+describe employee_payroll;
+select * from employee_payroll;
+
+
 
 
