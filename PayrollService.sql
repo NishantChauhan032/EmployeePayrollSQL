@@ -138,16 +138,36 @@ Insert into Employee_Dept(ID,Dep_ID) Values
 (3,'DID03');
 select * from employee_dept;
 
-Select Gender,Sum(Net_Pay),Avg(Net_Pay),Min(Net_Pay),Max(Net_pay)       #Redo UC7
+Select Gender,Sum(Net_Pay),Avg(Net_Pay),Min(Net_Pay),Max(Net_pay)           #Redo UC7
 From Employee_Details Join Employee_Payroll                       
 On Employee_Details.Salary_ID = Employee_Payroll.Salary_ID
 Group by Gender;
 
 Select Gender,Count(*) from Employee_Details Group By Gender;
 
+# UC 12- Retrieving done same as UC4/5/7:-
 
+Select * from Employee_Details;                                            #UC4
+Select * from Department;                                                  #UC4
+Select * from employee_Payroll;                                            #UC4
+Select * from Employee_Dept;                                               #UC4
 
+Select Name,Basic_Pay,Deductions,Taxable_Pay,Income_Tax,Net_Pay            #UC5-Retrieval For individual Employee
+From Employee_Details Join Employee_Payroll
+ON Employee_Details.Salary_ID = Employee_Payroll.Salary_ID
+where Name = 'Charlie';
 
+Select Name,Basic_Pay,Deductions,Taxable_Pay,Income_Tax,Net_Pay,Start      #UC5-Retrieval For Employee Joined after a particular date
+From Employee_Details Join Employee_Payroll
+ON Employee_Details.Salary_ID = Employee_Payroll.Salary_ID
+where start between cast('2018-01-01' as date) and date(now());
+
+Select Gender,Sum(Net_Pay),Avg(Net_Pay),Min(Net_Pay),Max(Net_pay)           #Retrieval same as In UC7
+From Employee_Details Join Employee_Payroll                       
+On Employee_Details.Salary_ID = Employee_Payroll.Salary_ID
+Group by Gender;
+
+Select Gender,Count(*) from Employee_Details Group By Gender;
 
 
 
