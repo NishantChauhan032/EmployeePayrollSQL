@@ -138,6 +138,15 @@ Insert into Employee_Dept(ID,Dep_ID) Values
 (3,'DID03');
 select * from employee_dept;
 
+Select Gender,Sum(Net_Pay),Avg(Net_Pay),Min(Net_Pay),Max(Net_pay)       #Redo UC7
+From Employee_Details Join Employee_Payroll                       
+On Employee_Details.Salary_ID = Employee_Payroll.Salary_ID
+Group by Gender;
+
+Select Gender,Count(*) from Employee_Details Group By Gender;
+
+
+
 
 
 
